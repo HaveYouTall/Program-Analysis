@@ -4,7 +4,9 @@ Implementing basic program analysis function.
 
 Using LLVM version 12.0.0.
 
-- \[**New** 2022/05/22\]: Now it only support Intra-procedural Reaching Definition Analysis.
+- \[**New** 2022/06/10\]: Now it supports Intra-procedural **Live Variables Analysis**.
+
+- \[**New** 2022/05/22\]: Now it only supports Intra-procedural **Reaching Definition Analysis**.
 
 ## Folder tree
 
@@ -19,12 +21,15 @@ $ tree hytProgramAnalysis
 hytProgramAnalysis
 ├── CMakeLists.txt
 ├── HytDFA.cpp
+├── HytLVA.cpp
 └── test.cpp
 
-0 directories, 3 files
+0 directories, 4 files
 ```
 
-`HytDFA.cpp` contains the source code of Reaching Definition Analysis.
+`HytLVA.cpp` contains the source code of **Live Variables Analysis**. 
+
+`HytDFA.cpp` contains the source code of **Reaching Definition Analysis**.
 
 `test.cpp` is the test version of `HytDFA.cpp`.
 
@@ -36,6 +41,10 @@ Note that, **THIS** `CMakeLists.txt` file contains the build information of this
 
 Source code is in `hytProgramAnalysis/HytDFA.cpp`.
 
-### Liveness Variable Analysis
+### Live Variables Analysis
 
-TODO
+Source code is in `hytProgramAnalysis/HytLVA.cpp`.
+
+### More Analysis
+
+TODO...
