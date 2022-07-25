@@ -4,6 +4,8 @@ Implementing basic program analysis function.
 
 Using LLVM version 12.0.0.
 
+- \[**New** 2022/07/10\]: Now it supports Intra-procedural **Available Expressions Analysis**.
+
 - \[**New** 2022/06/10\]: Now it supports Intra-procedural **Live Variables Analysis**.
 
 - \[**New** 2022/05/22\]: Now it only supports Intra-procedural **Reaching Definition Analysis**.
@@ -20,16 +22,19 @@ The `hytProgramAnalysis` folder consists of the following things.
 $ tree hytProgramAnalysis 
 hytProgramAnalysis
 ├── CMakeLists.txt
+├── HytAEA.cpp
 ├── HytDFA.cpp
 ├── HytLVA.cpp
 └── test.cpp
 
-0 directories, 4 files
+0 directories, 5 files
 ```
 
 `HytLVA.cpp` contains the source code of **Live Variables Analysis**. 
 
 `HytDFA.cpp` contains the source code of **Reaching Definition Analysis**.
+
+`HytAEA.cpp` contains the source code of **Available Expressions Analysis**
 
 `test.cpp` is the test version of `HytDFA.cpp`.
 
@@ -44,6 +49,14 @@ Source code is in `hytProgramAnalysis/HytDFA.cpp`.
 ### Live Variables Analysis
 
 Source code is in `hytProgramAnalysis/HytLVA.cpp`.
+
+### Available Expressions Analysis
+
+Source code is in `hytProgramAnalysis/HytAEA.cpp`.
+
+### Pointer Analysis (Context insensitive)
+
+Working...
 
 ### More Analysis
 
