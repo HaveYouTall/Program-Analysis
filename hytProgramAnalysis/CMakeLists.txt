@@ -14,6 +14,7 @@ add_llvm_library( LLVMHytDFA MODULE
   HytDFA.cpp
   HytLVA.cpp
   HytAEA.cpp
+  HytPTA.cpp
   # DEPENDS
   # intrinsics_gen
   PLUGIN_TOOL
