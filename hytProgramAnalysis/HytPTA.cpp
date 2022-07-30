@@ -675,7 +675,8 @@ namespace {
 
     // Entry of Pointer Analysis.
     bool runOnModule(Module &M) override {
-
+      errs() << "[" << "\033[32m" << "+" << "\033[0m" << "]"
+             << " Start\n";
       // Analysis the vTable structure.
       for (auto gv_iter = M.global_begin();gv_iter != M.global_end(); gv_iter++) {
         /* GLOBAL DATA INFO*/
@@ -737,8 +738,6 @@ namespace {
         }
       }
 #endif 
-
-#ifndef DEBUG
       AddReachable(F);
       while(!WL_.empty()) {
         pair<Value*, BitVector> working = WL_.front(); // working = <n, pts>
@@ -749,7 +748,7 @@ namespace {
         // errs() << "  [" << "\033[34m" << "+" << "\033[0m" << "]" 
         //        << " Now process: " << *(working.first) << " ";
         // errs() << "With pts: ";
-        PrintBitVector(working.second);
+        // PrintBitVector(working.second);
 
         if(PT_.find(working.first) == PT_.end()) {
           BitVector tmp = BitVector(objCount_, false);
@@ -836,8 +835,6 @@ namespace {
       PrintPT();
       PrintPFG();
 
-
-#endif
       errs() << "[" << "\033[32m" << "+" << "\033[0m" << "]"
              << " Finised\n";
 
